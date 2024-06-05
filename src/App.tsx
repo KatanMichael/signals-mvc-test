@@ -1,5 +1,6 @@
 import './App.css'
 import { decreseCount, getCount, incrementCount } from './Controllers/CountController'
+import { getAllPosts, getFirstPostBody, refreshPosts } from './Controllers/PostsController'
 
 function App() {
 
@@ -17,9 +18,12 @@ function App() {
         count is {getCount()}
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div>
+        <button
+        onClick={()=>{refreshPosts()}}
+        >Get All Posts</button>
+        <p>{getFirstPostBody()}</p>
+      </div>
     </>
   )
 }
